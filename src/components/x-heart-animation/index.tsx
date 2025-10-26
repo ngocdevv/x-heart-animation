@@ -39,11 +39,11 @@ export function XHeartAnimation({
   debugMode = false
 }: LikeButtonSkiaProps) {
   const [isLiked, setIsLiked] = React.useState(initialLiked);
-  const [showParticles, setShowParticles] = React.useState(false);
 
   const progress = useSharedValue(initialLiked ? 1 : 0);
 
   const isLiking = useSharedValue(initialLiked);
+  const showParticles = useSharedValue(initialLiked);
 
   const particles = useMemo(() => {
     const particleList: Array<{
@@ -90,9 +90,8 @@ export function XHeartAnimation({
     setIsLiked(newLiked);
 
     if (newLiked) {
-      setShowParticles(true);
-
       isLiking.value = true;
+      showParticles.value = true;
 
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
 
@@ -101,9 +100,8 @@ export function XHeartAnimation({
         easing: easeOutC,
       });
     } else {
-      setShowParticles(false);
-
       isLiking.value = false;
+      showParticles.value = false;
 
       progress.value = withTiming(0, {
         duration: 200,
@@ -293,7 +291,7 @@ export function XHeartAnimation({
             });
 
             const finalOpacity = useDerivedValue(() => {
-              return showParticles ? animation.opacity.value : 0;
+              return showParticles.value ? animation.opacity.value : 0;
             });
 
             const particleColor = useDerivedValue(() => {
