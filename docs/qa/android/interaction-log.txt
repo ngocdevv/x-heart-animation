@@ -1,0 +1,12 @@
+--------- beginning of main
+10-10 14:06:07.023 27300 27300 D XHeartAnimation: Liked: true
+10-10 14:06:07.031 27300 27300 D XHeartAnimation: Liked: false
+10-10 14:06:07.204 27300 27300 D XHeartAnimation: Liked: true
+10-10 14:06:28.504 27300 27300 D XHeartAnimation: Liked: false
+10-10 14:06:28.810 27300 27300 D XHeartAnimation: Liked: true
+10-10 14:06:28.832 27300 27300 D XHeartAnimation: Liked: false
+10-10 14:07:08.398 27300 27300 D XHeartAnimation: Liked: true
+10-10 14:07:08.690 27300 27300 D XHeartAnimation: Liked: false
+10-10 14:07:08.954 27300 27300 D XHeartAnimation: Liked: true
+10-10 14:07:09.225 27300 27300 D XHeartAnimation: Liked: false
+10-10 14:08:06.327 27300 27300 D XHeartAnimation: Liked: true

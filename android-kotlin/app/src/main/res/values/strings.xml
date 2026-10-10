@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">X Heart Animation</string>
+    <string name="heart_action_like">Thích</string>
+    <string name="heart_action_unlike">Bỏ thích</string>
+    <string name="heart_state_liked">Đã thích</string>
+    <string name="heart_state_unliked">Chưa thích</string>
+</resources>

@@ -1,0 +1,26 @@
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: FATAL EXCEPTION: main
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: Process: com.ngocdevv.xheart, PID: 24012
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.ngocdevv.xheart/com.ngocdevv.xheart.MainActivity}: java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.WindowInsetsController com.android.internal.policy.DecorView.getWindowInsetsController()' on a null object reference
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4280)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4467)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:222)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:133)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:103)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:80)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2823)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:338)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.WindowInsetsController com.android.internal.policy.DecorView.getWindowInsetsController()' on a null object reference
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at com.android.internal.policy.PhoneWindow.getInsetsController(PhoneWindow.java:4140)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at com.ngocdevv.xheart.MainActivity.configureSystemBars(MainActivity.kt:36)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at com.ngocdevv.xheart.MainActivity.onCreate(MainActivity.kt:17)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:9155)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:9133)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1521)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4262)
+10-10 13:46:21.560 24012 24012 E AndroidRuntime: 	... 13 more

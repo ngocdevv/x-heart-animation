@@ -21,6 +21,9 @@ expo-env.d.ts
 # Metro
 .metro-health-check*
 
+# Raw Argent captures; selected QA evidence lives in docs/qa
+.argent/recordings/
+
 # debug
 npm-debug.*
 yarn-debug.*

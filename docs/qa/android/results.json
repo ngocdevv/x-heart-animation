@@ -1,0 +1,126 @@
+{
+  "device": {
+    "serial": "emulator-5554",
+    "avd": "OTPInputPerfAPI36",
+    "model": "sdk_gphone64_arm64",
+    "api": 36,
+    "width": 1080,
+    "height": 2400
+  },
+  "fix": {
+    "file": "android-kotlin/app/src/main/java/com/ngocdevv/xheart/MainActivity.kt",
+    "issue": "PhoneWindow.getInsetsController threw NullPointerException before decor existed.",
+    "change": "Call configureSystemBars after setContentView.",
+    "verified": "Clean reinstall + launch succeeded."
+  },
+  "build": {
+    "command": "./gradlew --no-daemon assembleDebug testDebugUnitTest lint",
+    "result": "BUILD SUCCESSFUL in 15s",
+    "tasks": 49,
+    "executed": 14,
+    "upToDate": 35,
+    "unitTests": 4,
+    "failures": 0,
+    "lintErrors": 0,
+    "lintWarnings": 4
+  },
+  "cases": [
+    {
+      "id": "idle",
+      "result": "pass",
+      "observed": "Black full viewport; centered gray outline, accessible Thích button."
+    },
+    {
+      "id": "like",
+      "result": "pass",
+      "observed": "Video frames 66–70 show 14 distinct particle components in 7 pairs, ring disk → annulus, settled red filled heart."
+    },
+    {
+      "id": "unlike",
+      "result": "pass",
+      "observed": "Shrink→outline, no ring/particle burst. Restored center ROI pixel-identical with idle."
+    },
+    {
+      "id": "rapid-odd",
+      "result": "pass",
+      "observed": "3 native callbacks → liked, red heart, checked Bỏ thích."
+    },
+    {
+      "id": "rapid-even",
+      "result": "pass",
+      "observed": "4 native callbacks with 200ms requested gaps, observed 264–292ms native intervals → unliked. The entire 827ms group interrupts the 1000ms like animation."
+    },
+    {
+      "id": "rapid-100ms-trial",
+      "result": "inconclusive",
+      "observed": "4 Argent taps acknowledged at about 105ms gaps but only 3 native onToggle callbacks. Native receipt of the missing click is unproven; no guarantee at all tap frequencies. Touch dispatch was not changed."
+    },
+    {
+      "id": "foreground-return",
+      "result": "pass",
+      "observed": "Home returned launcher AX tree; launch-app returned red heart and checked Bỏ thích. Does not test Activity recreation."
+    },
+    {
+      "id": "portrait",
+      "result": "observed",
+      "observed": "All captures are 1080×2400 portrait; manifest locks portrait. Rotation was not exercised."
+    },
+    {
+      "id": "haptics-runtime",
+      "result": "no-error-observed",
+      "observed": "Like events completed; the targeted current-PID AndroidRuntime log has no exceptions or permission errors. Emulator cannot verify physical haptic feel."
+    }
+  ],
+  "recording": {
+    "path": "docs/qa/android/animation.mp4",
+    "fps": 30,
+    "duration": 14.166667,
+    "trimStatic": false,
+    "showTouches": false,
+    "bytes": 60897,
+    "note": "Repeated and jumped frames under host load; no claim of exact real-time animation smoothness from this recording."
+  },
+  "transport": {
+    "note": "Host resource starvation during concurrent iOS simulator startup caused Android transport timeouts and a System UI ANR. Recovery followed scoped iOS shutdown; the Android device was not rebooted."
+  },
+  "toolEvidence": {
+    "androidFreshIdle": null,
+    "androidLikeUnlike": [
+      "NOTE: A screen recording is still running on device emulator-5554 (started 2s ago, auto-stops after 30s). Once you have captured what you need, call `screen-recording-stop` with { \"udid\": \"emulator-5554\" } to finalize and retrieve the video.\n(If a recording was started by another agent sharing this tool-server, leave it to them.)",
+      "{\n  \"completed\": 2,\n  \"total\": 2,\n  \"steps\": [\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791614884323\n      }\n    },\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791614886011\n      }\n    }\n  ]\n}",
+      "--- Screen after action ---",
+      "Saved: /var/folders/fr/5bdy6vrs2m9gy9p4x0mgwly40000gn/T/simserver-wEAHw2/media/644494000-1791614890944.png",
+      "--- Elements after action (describe) ---\nSource: android-devtools\nMode: nested\nCoordinates are normalized [0,1] fractions of the screen (x, y, width, height), not pixels.\nPass them straight to gesture-tap / gesture-swipe / gesture-pinch, which expect this same space.\nTo tap an element, use its centre: tap_x = frame.x + frame.width / 2, tap_y = frame.y + frame.height / 2.\n\nROOT  Screen (0.000, 0.000, 1.000, 1.000)\n\n  Button \"Thích\" [clickable,checkable]  (0.430, 0.468, 0.141, 0.063)"
+    ],
+    "androidRapidOddFinal": [
+      "{\n  \"completed\": 3,\n  \"total\": 3,\n  \"steps\": [\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791615966701\n      }\n    },\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791615966826\n      }\n    },\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791615966931\n      }\n    }\n  ]\n}",
+      "--- Screen after action ---",
+      "Saved: /var/folders/fr/5bdy6vrs2m9gy9p4x0mgwly40000gn/T/simserver-Onbo3r/media/613017000-1791615969618.png",
+      "--- Elements after action (describe) ---\nSource: android-devtools\nMode: nested\nCoordinates are normalized [0,1] fractions of the screen (x, y, width, height), not pixels.\nPass them straight to gesture-tap / gesture-swipe / gesture-pinch, which expect this same space.\nTo tap an element, use its centre: tap_x = frame.x + frame.width / 2, tap_y = frame.y + frame.height / 2.\n\nROOT  Screen (0.000, 0.000, 1.000, 1.000)\n\n  Button \"Bỏ thích\" [clickable,checked]  (0.430, 0.468, 0.141, 0.063)"
+    ],
+    "androidRapidEvenFinal": [
+      "{\n  \"completed\": 4,\n  \"total\": 4,\n  \"steps\": [\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791615988524\n      }\n    },\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791615988631\n      }\n    },\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791615988735\n      }\n    },\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791615988840\n      }\n    }\n  ]\n}",
+      "--- Screen after action ---",
+      "Saved: /var/folders/fr/5bdy6vrs2m9gy9p4x0mgwly40000gn/T/simserver-Onbo3r/media/703678000-1791615990709.png",
+      "--- Elements after action (describe) ---\nSource: android-devtools\nMode: nested\nCoordinates are normalized [0,1] fractions of the screen (x, y, width, height), not pixels.\nPass them straight to gesture-tap / gesture-swipe / gesture-pinch, which expect this same space.\nTo tap an element, use its centre: tap_x = frame.x + frame.width / 2, tap_y = frame.y + frame.height / 2.\n\nROOT  Screen (0.000, 0.000, 1.000, 1.000)\n\n  Button \"Thích\" [clickable,checkable]  (0.430, 0.468, 0.141, 0.063)"
+    ],
+    "androidRapidEvenVerified": [
+      "{\n  \"completed\": 4,\n  \"total\": 4,\n  \"steps\": [\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791616028386\n      }\n    },\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791616028650\n      }\n    },\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791616028905\n      }\n    },\n    {\n      \"tool\": \"gesture-tap\",\n      \"result\": {\n        \"tapped\": true,\n        \"timestampMs\": 1791616029172\n      }\n    }\n  ]\n}",
+      "--- Screen after action ---",
+      "Saved: /var/folders/fr/5bdy6vrs2m9gy9p4x0mgwly40000gn/T/simserver-Onbo3r/media/58232000-1791616031063.png",
+      "--- Elements after action (describe) ---\nSource: android-devtools\nMode: nested\nCoordinates are normalized [0,1] fractions of the screen (x, y, width, height), not pixels.\nPass them straight to gesture-tap / gesture-swipe / gesture-pinch, which expect this same space.\nTo tap an element, use its centre: tap_x = frame.x + frame.width / 2, tap_y = frame.y + frame.height / 2.\n\nROOT  Screen (0.000, 0.000, 1.000, 1.000)\n\n  Button \"Thích\" [clickable,checkable]  (0.430, 0.468, 0.141, 0.063)"
+    ],
+    "androidBackgroundHome": [
+      "{\n  \"pressed\": \"home\"\n}",
+      "--- Screen after action ---",
+      "Saved: /var/folders/fr/5bdy6vrs2m9gy9p4x0mgwly40000gn/T/simserver-Onbo3r/media/45563000-1791616102076.png",
+      "--- Elements after action (describe) ---\nSource: android-devtools\nMode: nested\nCoordinates are normalized [0,1] fractions of the screen (x, y, width, height), not pixels.\nPass them straight to gesture-tap / gesture-swipe / gesture-pinch, which expect this same space.\nTo tap an element, use its centre: tap_x = frame.x + frame.width / 2, tap_y = frame.y + frame.height / 2.\n\nROOT  Screen (0.000, 0.000, 1.000, 1.000)\n\n  ScrollView id=\"com.google.android.apps.nexuslauncher:id/workspace\" [scrollable]  (0.000, 0.000, 1.000, 1.000)\n    ViewGroup \"Sat, Oct 10\" id=\"com.google.android.apps.nexuslauncher:id/base_template_card_with_date\" [clickable]  (0.062, 0.046, 0.876, 0.114)\n      StaticText \"Sat, Oct 10\" id=\"com.google.android.apps.nexuslauncher:id/date\" [clickable]  (0.077, 0.090, 0.235, 0.026)\n    StaticText \"Play Store\" [clickable,long-clickable]  (0.062, 0.587, 0.190, 0.118)\n    StaticText \"Gmail\" [clickable,long-clickable]  (0.291, 0.587, 0.190, 0.118)\n    StaticText \"Photos\" [clickable,long-clickable]  (0.519, 0.587, 0.190, 0.118)\n    StaticText \"YouTube\" [clickable,long-clickable]  (0.748, 0.587, 0.190, 0.118)\n  View \"Home\" id=\"com.google.android.apps.nexuslauncher:id/accessibility_action_view\"  (0.000, 0.031, 1.000, 0.943)\n  StaticText \"Phone\" [clickable,long-clickable]  (0.077, 0.780, 0.160, 0.081)\n  StaticText \"Messages\" [clickable,long-clickable]  (0.306, 0.780, 0.160, 0.081)\n  StaticText \"Chrome\" [clickable,long-clickable]  (0.534, 0.780, 0.160, 0.081)\n  StaticText \"Play Store\" [clickable,long-clickable]  (0.763, 0.780, 0.160, 0.081)\n  FrameLayout \"Google search\" id=\"com.google.android.apps.nexuslauncher:id/search_container_hotseat\" [clickable,long-clickable]  (0.083, 0.885, 0.833, 0.069)\n    Image \"Google app\" id=\"com.google.android.apps.nexuslauncher:id/g_icon\" [clickable]  (0.094, 0.893, 0.117, 0.052)\n    Image \"Voice search\" id=\"com.google.android.apps.nexuslauncher:id/mic_icon\" [clickable]  (0.673, 0.885, 0.117, 0.069)\n    Button \"Google Lens\" id=\"com.google.android.apps.nexuslauncher:id/lens_icon\" [clickable]  (0.790, 0.885, 0.117, 0.069)"
+    ],
+    "androidReturnedForeground": [
+      "{\n  \"launched\": true,\n  \"bundleId\": \"com.ngocdevv.xheart\"\n}",
+      "--- Screen after action ---",
+      "Saved: /var/folders/fr/5bdy6vrs2m9gy9p4x0mgwly40000gn/T/simserver-Onbo3r/media/713821000-1791616106719.png",
+      "--- Elements after action (describe) ---\nSource: android-devtools\nMode: nested\nCoordinates are normalized [0,1] fractions of the screen (x, y, width, height), not pixels.\nPass them straight to gesture-tap / gesture-swipe / gesture-pinch, which expect this same space.\nTo tap an element, use its centre: tap_x = frame.x + frame.width / 2, tap_y = frame.y + frame.height / 2.\n\nROOT  Screen (0.000, 0.000, 1.000, 1.000)\n\n  Button \"Bỏ thích\" [clickable,checked]  (0.430, 0.468, 0.141, 0.063)"
+    ]
+  }
+}

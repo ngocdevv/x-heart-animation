@@ -1,0 +1,9 @@
+{
+  "platform": "android",
+  "serial": "emulator-5554",
+  "model": "sdk_gphone64_arm64",
+  "avd": "OTPInputPerfAPI36",
+  "api": 36,
+  "package": "com.ngocdevv.xheart",
+  "qaProcessPid": "27300"
+}
